@@ -28,35 +28,41 @@
 //	return 0;
 //}
 
-
+//改进
 //#include<stdio.h>
 //int main()
 //{
 //	int i = 0;
-//	int j = 1;
-//	int k = 0;
+//	int line = 0;
 //
-//	for (i = 1; i < 8; i++)
+//	scanf("%d", &line);
+//	for (i = 1; i <= line; i++)
 //	{
-//		j = 2 * i - 1;
-//		for (j; j>0; j--)
+//		int j = 0;
+//		for (j = 1; j <= line - i; j++)
 //		{
-//			printf("*");
+//			printf(" ");
 //		}
-//		printf("\n");
-//	}
-//	k = i - 1;
-//	for (k; k > 0; k--)
-//	{
-//		j = 2 * k - 1;
-//		for (j; j > 0; j--)
+//		for (j = 1; j <= 2 * i - 1; j++)
 //		{
 //			printf("*");
 //		}
 //		printf("\n");
 //	}
 //
-//	return 0;
+//	for (i = 1; i <= line - 1; i++)
+//	{
+//		int j = 0;
+//		for (j = 1; j <= i; j++)
+//		{
+//			printf(" ");
+//		}
+//		for (j = 1;j <= 2*(line-i)-1;  j++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
 //}
 
 //2.求出0～999之间的所有“水仙花数”并输出。
@@ -79,6 +85,47 @@
 //		}
 //	}
 //
+//	return 0;
+//}
+
+//改进
+//#include<stdio.h>
+//#include <math.h>
+//
+//int main()
+//{
+//	long long i = 0;
+//	long long lift = 0;
+//	long long right = 0;
+//
+//	printf("请输入操作数区间的最小数及最大数(以空格分开):>");
+//	scanf("%ld %ld", &lift, &right);
+//
+//	for(i=lift; i<=right; i++)
+//	{
+//		//判断i是否为水仙花数
+//		//1. 求位数
+//		long long sum = 0;
+//		int count = 0;
+//		long long tmp = i;
+//		while(tmp)
+//		{
+//			tmp/=10;
+//			count++;
+//		}
+//		//2. 求次方和
+//		tmp = i;
+//		while(tmp)
+//		{
+//			sum += pow(tmp%10, count);
+//			tmp /= 10;
+//		}
+//		//3. 判断
+//		if(sum == i)
+//		{
+//			printf("%d ", i);
+//		}
+//	}
 //	return 0;
 //}
 
