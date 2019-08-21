@@ -106,27 +106,27 @@
 //}
 
 //4. 编写一个函数 reverse_string(char * string)（递归实现） 实现：将参数字符串中的字符反向排列。要求：不能使用C函数库中的字符串操作函数。
-//#include<stdio.h>
-//#include<stdlib.h>
-//
-// void reverse_string(char * string)
-//{
-//	 if (*(++string) != '\0')
-//	 {
-//		 reverse_string(string);
-//	 }
-//	 
-//	 printf("%c", *(string - 1));
-//}
-//
-//int main()
-//{
-//	char arr[20] = { 0 };
-//	printf("请输入需要逆序的字符串:>");
-//	scanf("%s", arr);
-//	reverse_string(arr);
-//	return 0;
-//}
+#include<stdio.h>
+#include<stdlib.h>
+
+ void reverse_string(char * string)
+{
+	 if (*(++string) != '\0')
+	 {
+		 reverse_string(string);
+	 }
+	 
+	 printf("%c", *(string - 1));
+}
+
+int main()
+{
+	char arr[20] = { 0 };
+	printf("请输入需要逆序的字符串:>");
+	scanf("%s", arr);
+	reverse_string(arr);
+	return 0;
+}
 
 
 //5.递归和非递归分别实现strlen
